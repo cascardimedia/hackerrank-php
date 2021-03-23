@@ -9,12 +9,8 @@
  *  2. STRING path
  */
 
-
-//  Hikes always start and end at sea level so we only have to count
-//  the ups and downs in between
 function countingValleys($steps, $path) {
-  // Write your code here
-  
+
   // Sea Level
   $elevation  = 0;
   $nValleys = 0;
@@ -45,15 +41,13 @@ function countingValleys($steps, $path) {
       $aboveSeaLevel = false;
       $belowSeaLevel = false;
     }
-    echo $elevation.PHP_EOL;
   }
   
   // Return the number of valleys
   return $nValleys;
-
 }
 
-$fptr = fopen('counting-valleys.out', "w");
+$fptr = fopen(getenv("OUTPUT_PATH"), "w");
 
 $steps = intval(trim(fgets(STDIN)));
 
