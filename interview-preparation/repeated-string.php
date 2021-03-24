@@ -3,13 +3,16 @@
 
 // Complete the repeatedString function below.
 function repeatedString($s, $n) {
-    // $t = 1000000000000;
-    $data = count_chars($s, 1);
-    // $search  = str_repeat($s, 1000000000000);
-    $count = $data[ord('a')];
-    $length = strlen($s);
-    $ratio = $count / $length;
-    return number_format($n * $ratio, 0, '', '');
+  $strlen = strlen($s);
+  $r = $n % $strlen;
+
+  $c = substr_count($s, 'a');
+  $m = number_format($n/$strlen, 0, '', '');
+
+  $a = ($m * $c);
+
+  $a += substr_count(substr($s, 0, $r), 'a');
+  return $a;
 }
 
 $fptr = fopen(getenv("OUTPUT_PATH"), "w");
