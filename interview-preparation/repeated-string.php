@@ -14,7 +14,6 @@ function repeatedString($s, $n) {
         // this as a calculation and not a direct count operation
         $strlen = strlen($s);
         $r = $n % $strlen;
-
         $c = substr_count($s, 'a');
         $m = floor($n/$strlen);
         $a = ($m * $c);
